@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -25,16 +26,42 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-notification", {
+        body: {
+          name: formData.nombre,
+          email: formData.email,
+          phone: formData.telefono || undefined,
+          message: formData.mensaje,
+        },
+      });
 
-    toast({
-      title: "¡Mensaje enviado! 🚀",
-      description: "Nos pondremos en contacto contigo en menos de 24 horas.",
-    });
+      if (error) {
+        console.error("Error sending message:", error);
+        toast({
+          title: "Error al enviar",
+          description: "Hubo un problema al enviar tu mensaje. Inténtalo de nuevo.",
+          variant: "destructive",
+        });
+        return;
+      }
 
-    setFormData({ nombre: "", email: "", telefono: "", mensaje: "" });
-    setIsSubmitting(false);
+      toast({
+        title: "¡Mensaje enviado! 🚀",
+        description: "Nos pondremos en contacto contigo en menos de 24 horas.",
+      });
+
+      setFormData({ nombre: "", email: "", telefono: "", mensaje: "" });
+    } catch (err) {
+      console.error("Unexpected error:", err);
+      toast({
+        title: "Error inesperado",
+        description: "Algo salió mal. Inténtalo de nuevo más tarde.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
