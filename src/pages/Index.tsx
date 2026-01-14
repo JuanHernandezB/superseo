@@ -15,7 +15,7 @@ const Index = () => {
     "description": "Diseño web y posicionamiento SEO en Zafra, Badajoz. Creamos páginas web profesionales y te posicionamos en el #1 de Google.",
     "url": "https://superseo.es",
     "telephone": "+34600000000",
-    "email": "hola@superseo.es",
+    "email": "info@superseo.es",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Zafra",

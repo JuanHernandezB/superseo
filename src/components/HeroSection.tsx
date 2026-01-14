@@ -90,7 +90,7 @@ const HeroSection = () => {
               <img
                 src={superheroesImage}
                 alt="J y R, los superhéroes del diseño web y SEO en Zafra, Badajoz - SuperSEO"
-                className="w-full max-w-lg mx-auto rounded-2xl hero-shadow"
+                className="w-full max-w-lg mx-auto"
               />
               {/* Glow effect behind image */}
               <div className="absolute inset-0 -z-10 blur-3xl bg-gradient-hero opacity-30 scale-110" />
