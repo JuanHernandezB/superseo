@@ -125,11 +125,23 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Email sent successfully:", emailResponse);
 
+    // Delete message from database after successful email send
+    const { error: deleteError } = await supabase
+      .from("contact_messages")
+      .delete()
+      .eq("id", insertedData.id);
+
+    if (deleteError) {
+      console.error("Error deleting message from database:", deleteError);
+      // Continue anyway since email was sent successfully
+    } else {
+      console.log("Message deleted from database:", insertedData.id);
+    }
+
     return new Response(
       JSON.stringify({ 
         success: true, 
-        message: "Mensaje enviado correctamente",
-        id: insertedData.id 
+        message: "Mensaje enviado correctamente"
       }),
       { status: 200, headers: { "Content-Type": "application/json", ...corsHeaders } }
     );
