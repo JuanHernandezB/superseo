@@ -1,6 +1,6 @@
 import { ArrowDown, Sparkles, Shield, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import superheroesImage from "@/assets/superheroes.png";
+import escudosImage from "@/assets/escudos.png";
 
 const HeroSection = () => {
   return (
@@ -88,8 +88,8 @@ const HeroSection = () => {
           <div className="relative animate-scale-in" style={{ animationDelay: "0.2s" }}>
             <div className="relative z-10 animate-float">
               <img
-                src={superheroesImage}
-                alt="J y R, los superhéroes del diseño web y SEO en Zafra, Badajoz - SuperSEO"
+                src={escudosImage}
+                alt="Escudos J & R - SuperSEO, diseño web y SEO en Zafra, Badajoz"
                 className="w-full max-w-lg mx-auto"
               />
               {/* Glow effect behind image */}

@@ -1,5 +1,5 @@
 import { Heart, MapPin, Sparkles } from "lucide-react";
-import superheroesImage from "@/assets/superheroes.png";
+import escudosImage from "@/assets/escudos.png";
 
 const AboutSection = () => {
   return (
@@ -12,9 +12,9 @@ const AboutSection = () => {
           <div className="relative order-2 lg:order-1">
             <div className="relative">
               <img
-                src={superheroesImage}
-                alt="J y R - El equipo de SuperSEO, expertos en diseño web y SEO en Zafra"
-                className="w-full max-w-md mx-auto rounded-2xl hero-shadow"
+                src={escudosImage}
+                alt="Escudos J & R - El equipo de SuperSEO, expertos en diseño web y SEO en Zafra"
+                className="w-full max-w-md mx-auto"
               />
               <div className="absolute inset-0 -z-10 blur-3xl bg-gradient-hero opacity-20 scale-110" />
             </div>
