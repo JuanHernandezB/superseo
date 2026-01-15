@@ -23,15 +23,16 @@ const Navbar = () => {
   ];
 
   return (
-    <nav
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "glass py-3" : "bg-transparent py-5"
       }`}
+      role="banner"
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
+      <nav className="container mx-auto px-4 flex items-center justify-between" aria-label="Navegación principal">
         <a href="#inicio" className="flex items-center gap-2 group">
           <div className="relative">
-            <Zap className="w-8 h-8 text-primary group-hover:text-accent transition-colors" />
+            <Zap className="w-8 h-8 text-primary group-hover:text-accent transition-colors" aria-hidden="true" />
             <div className="absolute inset-0 blur-lg bg-primary/50 group-hover:bg-accent/50 transition-colors" />
           </div>
           <span className="text-xl font-bold font-display text-gradient">
@@ -64,19 +65,21 @@ const Navbar = () => {
         <button
           className="md:hidden text-foreground p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={isMobileMenuOpen}
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
         </button>
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       <div
         className={`md:hidden absolute top-full left-0 right-0 glass transition-all duration-300 ${
           isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
+        aria-hidden={!isMobileMenuOpen}
       >
-        <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
+        <nav className="container mx-auto px-4 py-6 flex flex-col gap-4" aria-label="Navegación móvil">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -95,9 +98,9 @@ const Navbar = () => {
               ¡Hablemos!
             </a>
           </Button>
-        </div>
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 };
 

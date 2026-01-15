@@ -4,13 +4,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="py-12 border-t border-border/50">
+    <footer className="py-12 border-t border-border/50" role="contentinfo">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
-          <a href="#inicio" className="flex items-center gap-2 group">
+          <a href="#inicio" className="flex items-center gap-2 group" aria-label="SuperSEO - Ir al inicio">
             <div className="relative">
-              <Zap className="w-6 h-6 text-primary group-hover:text-accent transition-colors" />
+              <Zap className="w-6 h-6 text-primary group-hover:text-accent transition-colors" aria-hidden="true" />
             </div>
             <span className="text-lg font-bold font-display text-gradient">
               SuperSEO
@@ -18,7 +18,7 @@ const Footer = () => {
           </a>
 
           {/* Links */}
-          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+          <nav className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground" aria-label="Enlaces del pie de página">
             <a href="#servicios" className="hover:text-foreground transition-colors">
               Servicios
             </a>
@@ -31,13 +31,14 @@ const Footer = () => {
             <a href="#contacto" className="hover:text-foreground transition-colors">
               Contacto
             </a>
-          </div>
+          </nav>
 
           {/* Copyright */}
           <div className="flex items-center gap-1 text-sm text-muted-foreground">
             <span>© {currentYear} SuperSEO. Hecho con</span>
-            <Heart className="w-4 h-4 text-secondary fill-secondary" />
-            <span>en Zafra</span>
+            <Heart className="w-4 h-4 text-secondary fill-secondary" aria-hidden="true" />
+            <span className="sr-only">amor</span>
+            <span aria-hidden="true">en Zafra</span>
           </div>
         </div>
 
