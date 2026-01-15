@@ -77,7 +77,7 @@ const ServicesSection = () => {
                   <div className={`absolute inset-0 w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} blur-xl opacity-50 group-hover:opacity-75 transition-opacity`} />
                 </div>
                 
-                <h3 className="text-2xl font-bold font-display mb-4 group-hover:text-gradient transition-all">
+                <h3 className="text-xl font-bold font-display mb-4 group-hover:text-gradient transition-all">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground mb-6">{service.description}</p>
@@ -106,7 +106,7 @@ const ServicesSection = () => {
               <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
                 <benefit.icon className="w-6 h-6 text-primary" />
               </div>
-              <h4 className="font-bold font-display mb-2">{benefit.title}</h4>
+              <h3 className="font-bold font-display mb-2">{benefit.title}</h3>
               <p className="text-sm text-muted-foreground">{benefit.description}</p>
             </div>
           ))}

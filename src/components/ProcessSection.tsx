@@ -79,7 +79,7 @@ const ProcessSection = () => {
                     <step.icon className={`w-7 h-7 text-${step.color}`} />
                   </div>
 
-                  <h3 className="text-xl font-bold font-display mb-3">{step.title}</h3>
+                  <h3 className="text-lg font-bold font-display mb-3">{step.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {step.description}
                   </p>

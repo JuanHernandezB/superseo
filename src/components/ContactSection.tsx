@@ -89,7 +89,7 @@ const ContactSection = () => {
                   <Mail className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-bold mb-1">Email</h4>
+                  <h3 className="font-bold mb-1 text-base">Email</h3>
                   <a
                     href="mailto:info@superseo.es"
                     className="text-muted-foreground hover:text-foreground transition-colors"
@@ -104,7 +104,7 @@ const ContactSection = () => {
                   <Phone className="w-5 h-5 text-secondary" />
                 </div>
                 <div>
-                  <h4 className="font-bold mb-1">Teléfono</h4>
+                  <h3 className="font-bold mb-1 text-base">Teléfono</h3>
                   <a
                     href="tel:+34600000000"
                     className="text-muted-foreground hover:text-foreground transition-colors"
@@ -119,7 +119,7 @@ const ContactSection = () => {
                   <MapPin className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <h4 className="font-bold mb-1">Ubicación</h4>
+                  <h3 className="font-bold mb-1 text-base">Ubicación</h3>
                   <p className="text-muted-foreground">
                     Zafra, Badajoz<br />
                     Extremadura, España
@@ -130,7 +130,7 @@ const ContactSection = () => {
 
             {/* Guarantees */}
             <div className="p-6 rounded-2xl glass space-y-4">
-              <h4 className="font-bold font-display">Nuestra promesa</h4>
+              <h3 className="font-bold font-display text-base">Nuestra promesa</h3>
               <ul className="space-y-3">
                 {[
                   "Respuesta en menos de 24h",
